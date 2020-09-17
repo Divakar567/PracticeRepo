@@ -1,0 +1,754 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/integrations/{integrationCode}/activate": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "integrationCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Payload",
+                        "description": "{\"instanceId\":\"37348\"}",
+                        "required": false,
+                        "in": "body",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "instanceId": "string"
+                                }
+                            ],
+                            "properties": {
+                                "instanceId": {
+                                    "type": "string",
+                                    "examples": [
+                                        "string"
+                                    ]
+                                }
+                            }
+                        },
+                        "type": "JSON"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "status": "success",
+                                    "response": {
+                                        "integrationId": "ea67aa08-2c3f-4513-bd0f-7fe1cf53dc57",
+                                        "partnerId": "",
+                                        "isPartner": false,
+                                        "customerId": "MSP_029929",
+                                        "customerName": "Elite Networks",
+                                        "ciManagement": "CUSTOMER"
+                                    }
+                                }
+                            ],
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "examples": [
+                                        "success"
+                                    ]
+                                },
+                                "response": {
+                                    "type": "object",
+                                    "examples": [
+                                        {
+                                            "integrationId": "ea67aa08-2c3f-4513-bd0f-7fe1cf53dc57",
+                                            "partnerId": "",
+                                            "isPartner": false,
+                                            "customerId": "MSP_029929",
+                                            "customerName": "Elite Networks",
+                                            "ciManagement": "CUSTOMER"
+                                        }
+                                    ],
+                                    "properties": {
+                                        "integrationId": {
+                                            "type": "string",
+                                            "examples": [
+                                                "ea67aa08-2c3f-4513-bd0f-7fe1cf53dc57"
+                                            ]
+                                        },
+                                        "partnerId": {
+                                            "type": "string",
+                                            "examples": [
+                                                ""
+                                            ]
+                                        },
+                                        "isPartner": {
+                                            "type": "boolean",
+                                            "examples": [
+                                                false
+                                            ]
+                                        },
+                                        "customerId": {
+                                            "type": "string",
+                                            "examples": [
+                                                "MSP_029929"
+                                            ]
+                                        },
+                                        "customerName": {
+                                            "type": "string",
+                                            "examples": [
+                                                "Elite Networks"
+                                            ]
+                                        },
+                                        "ciManagement": {
+                                            "type": "string",
+                                            "examples": [
+                                                "CUSTOMER"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/customers": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "searchKey",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "\"\""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "0"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "20"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/entities": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/customers/mappings": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Payload",
+                        "description": "{\"customers\":[{\"customerId\":\"23883\",\"externalCustomerId\":\"23892383\"}]}",
+                        "required": false,
+                        "in": "body",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "customers": [
+                                        {
+                                            "customerId": "23883",
+                                            "externalCustomerId": "23892383"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "properties": {
+                                "customers": {
+                                    "type": "array",
+                                    "examples": [
+                                        [
+                                            {
+                                                "customerId": "23883",
+                                                "externalCustomerId": "23892383"
+                                            }
+                                        ]
+                                    ],
+                                    "items": {
+                                        "anyOf": [
+                                            {
+                                                "type": "object",
+                                                "examples": [
+                                                    {
+                                                        "customerId": "23883",
+                                                        "externalCustomerId": "23892383"
+                                                    }
+                                                ],
+                                                "properties": {
+                                                    "customerId": {
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "23883"
+                                                        ]
+                                                    },
+                                                    "externalCustomerId": {
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "23892383"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "status": "success",
+                                    "response": {
+                                        "customers": [
+                                            {
+                                                "customerId": "23883",
+                                                "customerName": null,
+                                                "externalCustomerId": "23892383"
+                                            }
+                                        ],
+                                        "integrationId": "22323"
+                                    }
+                                }
+                            ],
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "examples": [
+                                        "success"
+                                    ]
+                                },
+                                "response": {
+                                    "type": "object",
+                                    "examples": [
+                                        {
+                                            "customers": [
+                                                {
+                                                    "customerId": "23883",
+                                                    "customerName": null,
+                                                    "externalCustomerId": "23892383"
+                                                }
+                                            ],
+                                            "integrationId": "22323"
+                                        }
+                                    ],
+                                    "properties": {
+                                        "customers": {
+                                            "type": "array",
+                                            "examples": [
+                                                [
+                                                    {
+                                                        "customerId": "23883",
+                                                        "customerName": null,
+                                                        "externalCustomerId": "23892383"
+                                                    }
+                                                ]
+                                            ],
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "type": "object",
+                                                        "examples": [
+                                                            {
+                                                                "customerId": "23883",
+                                                                "customerName": null,
+                                                                "externalCustomerId": "23892383"
+                                                            }
+                                                        ],
+                                                        "properties": {
+                                                            "customerId": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                    "23883"
+                                                                ]
+                                                            },
+                                                            "customerName": {
+                                                                "type": "null",
+                                                                "examples": [
+                                                                    null
+                                                                ]
+                                                            },
+                                                            "externalCustomerId": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                    "23892383"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "integrationId": {
+                                            "type": "string",
+                                            "examples": [
+                                                "22323"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/entities/{entityName}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "832"
+                    },
+                    {
+                        "name": "entityName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "asset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/entities/mappings": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Payload",
+                        "description": "",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "entityName": "Asset",
+                                    "externalEntityName": "ConfigurationItem",
+                                    "source": "SNOW",
+                                    "attributeMappings": {
+                                        "assetId": {
+                                            "key": "ci_id",
+                                            "name": "Configuration Item Id",
+                                            "dataType": "string",
+                                            "required": true
+                                        },
+                                        "customerId": {
+                                            "key": "client_id",
+                                            "name": "Customer Id",
+                                            "dataType": "string",
+                                            "required": true
+                                        },
+                                        "partnerId": {
+                                            "key": "partner_id",
+                                            "name": "Partner Id",
+                                            "dataType": "string",
+                                            "required": false
+                                        },
+                                        "priority": {
+                                            "key": "criticality",
+                                            "name": "Criticalisty",
+                                            "dataType": "enum",
+                                            "required": false,
+                                            "defaultValue": "P0"
+                                        }
+                                    }
+                                }
+                            ],
+                            "properties": {
+                                "entityName": {
+                                    "type": "string",
+                                    "examples": [
+                                        "Asset"
+                                    ]
+                                },
+                                "externalEntityName": {
+                                    "type": "string",
+                                    "examples": [
+                                        "ConfigurationItem"
+                                    ]
+                                },
+                                "source": {
+                                    "type": "string",
+                                    "examples": [
+                                        "SNOW"
+                                    ]
+                                },
+                                "attributeMappings": {
+                                    "type": "object",
+                                    "examples": [
+                                        {
+                                            "assetId": {
+                                                "key": "ci_id",
+                                                "name": "Configuration Item Id",
+                                                "dataType": "string",
+                                                "required": true
+                                            },
+                                            "customerId": {
+                                                "key": "client_id",
+                                                "name": "Customer Id",
+                                                "dataType": "string",
+                                                "required": true
+                                            },
+                                            "partnerId": {
+                                                "key": "partner_id",
+                                                "name": "Partner Id",
+                                                "dataType": "string",
+                                                "required": false
+                                            },
+                                            "priority": {
+                                                "key": "criticality",
+                                                "name": "Criticalisty",
+                                                "dataType": "enum",
+                                                "required": false,
+                                                "defaultValue": "P0"
+                                            }
+                                        }
+                                    ],
+                                    "properties": {
+                                        "assetId": {
+                                            "type": "object",
+                                            "examples": [
+                                                {
+                                                    "key": "ci_id",
+                                                    "name": "Configuration Item Id",
+                                                    "dataType": "string",
+                                                    "required": true
+                                                }
+                                            ],
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "ci_id"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "Configuration Item Id"
+                                                    ]
+                                                },
+                                                "dataType": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "string"
+                                                    ]
+                                                },
+                                                "required": {
+                                                    "type": "boolean",
+                                                    "examples": [
+                                                        true
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "customerId": {
+                                            "type": "object",
+                                            "examples": [
+                                                {
+                                                    "key": "client_id",
+                                                    "name": "Customer Id",
+                                                    "dataType": "string",
+                                                    "required": true
+                                                }
+                                            ],
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "client_id"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "Customer Id"
+                                                    ]
+                                                },
+                                                "dataType": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "string"
+                                                    ]
+                                                },
+                                                "required": {
+                                                    "type": "boolean",
+                                                    "examples": [
+                                                        true
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "partnerId": {
+                                            "type": "object",
+                                            "examples": [
+                                                {
+                                                    "key": "partner_id",
+                                                    "name": "Partner Id",
+                                                    "dataType": "string",
+                                                    "required": false
+                                                }
+                                            ],
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "partner_id"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "Partner Id"
+                                                    ]
+                                                },
+                                                "dataType": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "string"
+                                                    ]
+                                                },
+                                                "required": {
+                                                    "type": "boolean",
+                                                    "examples": [
+                                                        false
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "priority": {
+                                            "type": "object",
+                                            "examples": [
+                                                {
+                                                    "key": "criticality",
+                                                    "name": "Criticalisty",
+                                                    "dataType": "enum",
+                                                    "required": false,
+                                                    "defaultValue": "P0"
+                                                }
+                                            ],
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "criticality"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "Criticalisty"
+                                                    ]
+                                                },
+                                                "dataType": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "enum"
+                                                    ]
+                                                },
+                                                "required": {
+                                                    "type": "boolean",
+                                                    "examples": [
+                                                        false
+                                                    ]
+                                                },
+                                                "defaultValue": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "P0"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "type": "object",
+                            "examples": [
+                                {
+                                    "status": "success",
+                                    "response": "Integration entity mapping created successfully"
+                                }
+                            ],
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "examples": [
+                                        "success"
+                                    ]
+                                },
+                                "response": {
+                                    "type": "string",
+                                    "examples": [
+                                        "Integration entity mapping created successfully"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/integrations/{integrationId}/entities/{entityName}/{entityId}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "integrationId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "3233"
+                    },
+                    {
+                        "name": "entityName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "asset"
+                    },
+                    {
+                        "name": "entityId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "43434352"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        }
+    },
+    "info": {
+        "title": "SNOWAppConfigurationAPIs",
+        "version": "v1.0"
+    },
+    "host": "stg.actoneye.com/apiserver",
+    "basePath": "/configurations/v1.0",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "securityDefinitions": {
+        "default": {
+            "type": "oauth2",
+            "authorizationUrl": "https://stg.actoneye.com/apiserver/authorize",
+            "flow": "implicit",
+            "scopes": {}
+        }
+    }
+}
